@@ -28,6 +28,3 @@ class Board():
 		self.loc = loc
 
 
-board = Board([7,7], [(0,1), (1,1)])
-board.update((0,3))
-print(board)

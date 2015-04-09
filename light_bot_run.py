@@ -33,10 +33,12 @@ def check_run(error_status, row, column):
 if __name__ == '__main__':
 	user_commands = get_raw()
 	light_bot = Bot(row, column, game_board, letter)
+	board = Board([7,7], [(0,1), (1,1)])
 	for letter in user_commands:
 		if light_bot.alive == True:
 			position = light_bot.move_bot(letter)
-			
+			board = board.update(position)
+			print(board)
 		else:
 			break
 
