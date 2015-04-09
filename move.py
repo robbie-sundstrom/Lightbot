@@ -41,6 +41,7 @@ class Bot(object):
 			self.alive = False
 
 		if self.alive: return (self.row, self.column)
+                else: return(0,0)
 
 
 
