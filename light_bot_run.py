@@ -36,9 +36,13 @@ if __name__ == '__main__':
 	light_bot = Bot(0, 0, board, user_commands)
 	for letter in user_commands:
 		if light_bot.alive == True:
+			light_bot.game_board = board
 			position = light_bot.move_bot(letter)
-			board = board.update(position)
-			print(board)
+			if position:
+				board = board.update(position)
+				print(board)
+			else:
+				print('Error')
 		else:
 			break
 

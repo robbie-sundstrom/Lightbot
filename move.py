@@ -15,11 +15,11 @@ class Bot(object):
 		elif direction == 'w':
 			if self.row == 0 or game_board[self.row-1][self.column] == '_': return False
 		elif direction == 's':
-			if self.row == len(self.game_board)-1 or game_board[self.row+1][self.column] == '_': return False
+			if self.row == self.game_board.size()-1 or game_board[self.row+1][self.column] == '_': return False
 		elif direction == 'a':
 			if self.column == 0 or game_board[self.row][self.column-1] == '_': return False
 		elif direction == 'd':
-			if self.column == len(self.row)-1 or game_board[self.row][self.column+1] == '_': return False
+			if self.column == self.game_board.size()-1 or game_board[self.row][self.column+1] == '_': return False
 
 		else:
 			return True
