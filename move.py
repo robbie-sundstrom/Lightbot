@@ -40,7 +40,7 @@ class Bot(object):
 		else:
 			self.alive = False
 
-		return (self.row, )
+		if self.alive: return (self.row, self.column)
 
 
 
