@@ -1,5 +1,5 @@
-from move.py import *
-from visual.py import *
+from move import *
+from visual import *
 
 def get_raw():
 	user_moves = raw_input()
@@ -32,8 +32,8 @@ def check_run(error_status, row, column):
 
 if __name__ == '__main__':
 	user_commands = get_raw()
-	light_bot = Bot(row, column, game_board, letter)
 	board = Board([7,7], [(0,1), (1,1)])
+	light_bot = Bot(0, 0, board, user_commands)
 	for letter in user_commands:
 		if light_bot.alive == True:
 			position = light_bot.move_bot(letter)

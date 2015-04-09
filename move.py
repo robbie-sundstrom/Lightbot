@@ -13,13 +13,13 @@ class Bot(object):
 
 		#check if bot will hit a wall or a non-legit space
 		elif direction == 'w':
-			if self.row == 0 or if game_board[self.row-1][self.column] == '_': return False
+			if self.row == 0 or game_board[self.row-1][self.column] == '_': return False
 		elif direction == 's':
-			if self.row == len(self.game_board)-1 or if game_board[self.row+1][self.column] == '_': return False
+			if self.row == len(self.game_board)-1 or game_board[self.row+1][self.column] == '_': return False
 		elif direction == 'a':
-			if self.column == 0 or if game_board[self.row][self.column-1] == '_': return False
+			if self.column == 0 or game_board[self.row][self.column-1] == '_': return False
 		elif direction == 'd':
-			if self.column == len(self.row)-1 or if game_board[self.row][self.column+1] == '_': return False
+			if self.column == len(self.row)-1 or game_board[self.row][self.column+1] == '_': return False
 
 		else:
 			return True
