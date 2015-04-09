@@ -1,4 +1,13 @@
-#from move.py import *
+from move.py import *
+from visual.py import *
+
+def get_raw():
+	user_moves = raw_input()
+	move_list = []
+	for letter in user_moves:
+		move_list.append(letter)
+	return move_list
+
 
 class RunAttemptCheck(object):
 	def __init__(self, error_status, row, column):
@@ -21,5 +30,16 @@ def check_run(error_status, row, column):
 		pass
 
 
+if __name__ == '__main__':
+	user_commands = get_raw()
+	light_bot = Bot(row, column, game_board, letter)
+	for letter in user_commands:
+		if light_bot.alive == True:
+			position = light_bot.move_bot(letter)
+			
+		else:
+			break
 
-check_run(False, 4, 6)
+	check_run(light_bot.alive, light_bot.row, light_bot.column)
+
+
